@@ -1,0 +1,169 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    background-color: var(--background-color);
+    color: var(--black-color-light);
+}
+.container {
+    max-width: 1104px;
+    margin: 0 auto;
+    display: grid;
+    justify-items: center;
+}
+:root {
+    --accent-color: #ffdd2d;
+    --accent-hover-color: #fcc521;
+    --accent-active-color: #fab619;
+    --accent-focus-color: #ffdd2d;
+    --accent-border-color: rgba(51, 51, 51, 0.48);
+    --dark-color: #333;
+    --background-color: #f6f7f8;
+    --white-color: #fff;
+    --black-color: #000;
+    --black-color-light: rgba(0, 0, 0, 0.8);
+    --black-color-mega-light: rgba(0, 0, 0, 0.54);
+    --link-color: #336fee;
+}
+
+/*Стили текста*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+.info-title {
+    font-weight: 900;
+    font-size: 44px;
+    margin: 0px 0 24px 0;
+}
+.desc-title {
+    font-weight: 700;
+}
+.desc {
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/*Стили шапки*/
+.header {
+    width: 1360px;
+    height: 64px;
+    margin: 0 auto;
+    background-color: var(--white-color);
+}
+.header__title {
+    padding: 15px 128px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.12);
+}
+.logo {
+    width: 151px;
+    height: 34px;
+}
+.menu-main {
+    display: flex;
+    align-items: center;
+}
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 48px;
+    text-align: center;
+    position: relative;
+}
+.menu-list li {
+    display: inline-block;
+    padding: 0px 0;
+}
+.menu-list a {
+    text-decoration: none;
+    color: var(--black-color-mega-light);
+    display: inline-block;
+    margin-right: 24px;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s linear;
+}
+.menu-list .current,
+.menu-list a:hover {
+    color: var(--black-color-light);
+}
+.current {
+}
+.menu-right {
+}
+
+/*Стили стены*/
+section {
+    padding: 76px 0 0 0;
+    margin-bottom: 24px;
+}
+.first-section {
+    margin-bottom: 55px;
+}
+.btn {
+    display: flex;
+    width: 150px;
+    height: 56px;
+    border-radius: 8px;
+    background: var(--accent-color);
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-bottom: 64px;
+}
+.btn:hover {
+    background: var(--accent-hover-color);
+    cursor: pointer;
+}
+.btn:active {
+    background: var(--accent-active-color);
+}
+.btn:focus {
+    background: var(--accent-focus-color);
+    border: 2px solid var(--accent-border-color);
+}
+.info-content {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    margin-top: 24px;
+}
+.info-list {
+    margin: 48px 0 0 68px;
+    padding: 0;
+}
+.info-list li {
+    font-size: 15px;
+    margin: 0;
+    margin-bottom: 12px;
+    line-height: 24px;
+    position: relative;
+    list-style-type: none;
+}
+.info-list li::before {
+    content: "";
+    background-image: url("media/Bullit.png");
+    background-size: 12px 24px;
+    width: 12px;
+    height: 24px;
+    left: -20px;
+    position: absolute;
+    text-align: center;
+}
