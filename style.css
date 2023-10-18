@@ -47,31 +47,31 @@ p {
     padding: 0;
     margin: 0;
 }
-.info-title {
+.container__title {
     font-weight: 900;
     font-size: 44px;
     margin: 0px 0 24px 0;
     line-height: 48px;
 }
-.desc-title {
+.container__card-title {
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 16px;
     line-height: 28px;
 }
-#double-card {
+:is(section.double-carted) .container__card-title {
     margin-bottom: 12px;
 }
-.desc {
+.container__desc {
     font-size: 15px;
     margin-bottom: 40px;
     line-height: 24px;
 }
-.card-desc {
+.container__card-desc {
     font-size: 15px;
     line-height: 24px;
 }
-.card-desc-center {
+:is(section.multi-carted) .container__card-desc {
     font-size: 15px;
     line-height: 24px;
     text-align: center;
@@ -84,39 +84,37 @@ p {
     height: 64px;
     margin: 0 auto;
     background-color: var(--white-color);
-}
-.header__title {
     padding: 15px 128px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.12);
 }
-.logo {
+.header__logo {
     width: 151px;
     height: 34px;
 }
-.login-img {
+.header__auth-logo {
     width: 24px;
     height: 24px;
     margin-left: 8px;
 }
-.menu-main {
+.header__menu {
     display: flex;
     align-items: center;
 }
-.menu-list {
+.header__pages {
     list-style: none;
     padding: 0;
     margin: 0 0 0 48px;
     text-align: center;
     position: relative;
 }
-.menu-list li {
+.header__pages li {
     display: inline-block;
     padding: 0px 0;
 }
-.menu-list a {
+.header__pages a {
     text-decoration: none;
     color: var(--black-color-mega-light);
     display: inline-block;
@@ -124,13 +122,13 @@ p {
     border-bottom: 1px solid transparent;
     transition: 0.3s linear;
 }
-.menu-list .current,
-.menu-list a:hover {
+.header__pages .header__pages-current,
+.header__pages a:hover {
     color: var(--black-color-light);
     position: relative;
     display: inline-block;
 }
-.menu-list .current::after {
+.header__pages .header__pages-current::after {
     content: "";
     position: absolute;
     background: var(--black-color-light);
@@ -139,7 +137,7 @@ p {
     width: 100%;
     height: 2px;
 }
-.menu-list a:hover::after {
+.header__pages a:hover::after {
     content: "";
     position: absolute;
     background: var(--black-color-light);
@@ -149,11 +147,16 @@ p {
     height: 2px;
 }
 
-.menu-right {
+.header__auth {
     display: flex;
     align-items: center;
     color: var(--link-color);
     cursor: pointer;
+}
+
+.header__auth a {
+    text-decoration: none;
+    color: var(--link-color);
 }
 
 /*Стили стены*/
@@ -161,11 +164,11 @@ section {
     padding: 76px 0 0 0;
     margin-bottom: 24px;
 }
-.first-section {
+section:first-of-type {
     padding: 80px 0 0 0;
     margin-bottom: 56px;
 }
-.btn {
+.container__btn {
     display: flex;
     width: 150px;
     height: 56px;
@@ -175,33 +178,38 @@ section {
     justify-content: center;
     font-size: 15px;
     margin-bottom: 64px;
+    border: 0;
+
+    padding: 16px 36px;
+
+    gap: 8px;
 }
-.btn:hover {
+.container__btn:hover {
     background: var(--accent-hover-color);
     cursor: pointer;
 }
-.btn:active {
+.container__btn:active {
     background: var(--accent-active-color);
 }
-.btn:focus {
+.container__btn:focus {
     background: var(--accent-focus-color);
     border: 2px solid var(--accent-border-color);
 }
-.info-content {
+.container__infobox {
     display: flex;
     justify-content: center;
     align-content: flex-start;
     margin-top: 24px;
 }
-.img-desc {
+.container__infobox-text {
     margin: 48px 0 0 48px;
 }
-.info-list {
+.container ul {
     padding: 0;
     padding-left: 20px;
     margin: 0;
 }
-.info-list li {
+.container ul li {
     font-size: 15px;
     margin: 0;
     margin-bottom: 12px;
@@ -209,10 +217,10 @@ section {
     position: relative;
     list-style-type: none;
 }
-#last-list-item {
+.container ul li:last-child {
     margin: 0;
 }
-.info-list li::before {
+.container ul li::before {
     content: "";
     background-image: url("media/Bullit.png");
     background-size: 12px 24px;
@@ -222,14 +230,14 @@ section {
     position: absolute;
     text-align: center;
 }
-.cards-container {
+.container__cards {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 24px;
     gap: 48px;
 }
-.card {
+.container__card {
     background-color: var(--white-color);
     display: flex;
     flex-direction: column;
@@ -242,7 +250,7 @@ section {
     height: 36px;
     margin-bottom: 44px;
 }
-.mini-cards-container {
+.container__cards-iterators {
     display: flex;
     width: 100%;
     margin-top: 24px;
@@ -251,7 +259,7 @@ section {
     margin-top: -26px;
     transform: translateY(50px);
 }
-.mini-card {
+.container__iter {
     background-color: var(--dark-color);
     display: flex;
     flex-direction: column;
@@ -284,7 +292,7 @@ footer .container::before {
     width: 100%;
     height: 1px;
 }
-.email {
+.container__email {
     color: var(--link-color);
     text-decoration: none;
 }

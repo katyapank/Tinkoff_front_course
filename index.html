@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Тинькоф Образование</title>
+        <title>Тинькофф Образование</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,40 +16,42 @@
         />
     </head>
     <body>
-        <header class="header">
-            <div class="header__title">
-                <div class="menu-main">
-                    <img class="logo" src="media/main-logo.svg" alt="" />
-                    <ul class="menu-list">
-                        <li><a href="" class="current">Финтех курсы</a></li>
-                        <li><a href="">Стажировки</a></li>
-                        <li><a href="">Мероприятия и партнёрства</a></li>
-                    </ul>
-                </div>
-                <div class="menu-right">
-                    Войти
-                    <img class="login-img" src="media/login.svg" alt="" />
-                </div>
+        <div class="header">
+            <div class="header__menu">
+                <img class="header__logo" src="media/main-logo.svg" alt="" />
+                <ul class="header__pages">
+                    <li>
+                        <a href="" class="header__pages-current"
+                            >Финтех курсы</a
+                        >
+                    </li>
+                    <li><a href="">Стажировки</a></li>
+                    <li><a href="">Мероприятия и партнёрства</a></li>
+                </ul>
             </div>
-        </header>
-        <section class="first-section">
+            <div class="header__auth">
+                <a href=""> Войти</a>
+                <img class="header__auth-logo" src="media/login.svg" alt="" />
+            </div>
+        </div>
+        <section>
             <div class="container">
-                <h1 class="info-title">Frontend-разработчик</h1>
-                <p class="desc">
+                <h1 class="container__title">Frontend-разработчик</h1>
+                <p class="container__desc">
                     Трехмесячный бесплатный учебный курс от Финтеха, который
                     можно проходить из любой точки России
                 </p>
-                <div class="btn">Подробнее</div>
+                <button class="container__btn">Подробнее</button>
                 <img src="/media/desktopHeroBannerNew.png" alt="" />
             </div>
         </section>
         <section>
             <div class="container">
-                <h1 class="info-title">Кому подойдет курс</h1>
-                <div class="info-content">
+                <h1 class="container__title">Кому подойдет курс</h1>
+                <div class="container__infobox">
                     <img src="/media/imageleft.png" alt="" />
-                    <div class="img-desc">
-                        <ul class="info-list">
+                    <div class="container__infobox-text">
+                        <ul>
                             <li>Вы студент или выпускник технических вузов</li>
                             <li>Хотите научиться создавать интерфейсы</li>
                             <li>
@@ -63,29 +65,29 @@
         </section>
         <section>
             <div class="container">
-                <h1 class="info-title">Что вас ждет на курсе</h1>
-                <div class="cards-container">
-                    <div class="card">
-                        <h2 class="desc-title">Основы разработки</h2>
-                        <p class="card-desc">
+                <h1 class="container__title">Что вас ждет на курсе</h1>
+                <div class="container__cards">
+                    <div class="container__card">
+                        <h2 class="container__card-title">Основы разработки</h2>
+                        <p class="container__card-desc">
                             Делимся инструментами, которые позволяют нам
                             создавать веб-продукты для миллионов клиентов
                         </p>
                     </div>
-                    <div class="card">
-                        <h2 class="desc-title">
+                    <div class="container__card">
+                        <h2 class="container__card-title">
                             Доступ к учебным материалам онлайн
                         </h2>
-                        <p class="card-desc">
+                        <p class="container__card-desc">
                             Онлайн-курс с лекциями и домашними заданиями. Вы
                             можете его пройти из любой точки России
                         </p>
                     </div>
-                    <div class="card">
-                        <h2 class="desc-title">
+                    <div class="container__card">
+                        <h2 class="container__card-title">
                             Возможность попасть в команду
                         </h2>
-                        <p class="card-desc">
+                        <p class="container__card-desc">
                             Во время курса участники выполняют много
                             практических заданий. <br />Мы замечаем лучших и
                             приглашаем их на собеседование
@@ -94,15 +96,15 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="double-carted">
             <div class="container">
-                <h1 class="info-title">Как строится обучение</h1>
-                <div class="cards-container">
-                    <div class="card">
-                        <h2 class="desc-title" id="double-card">
+                <h1 class="container__title">Как строится обучение</h1>
+                <div class="container__cards">
+                    <div class="container__card">
+                        <h2 class="container__card-title">
                             Онлайн-занятия 1 раз в неделю
                         </h2>
-                        <ul class="info-list">
+                        <ul>
                             <li>
                                 Курс стартует в середине февраля и длится три
                                 месяца
@@ -114,16 +116,16 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <h2 class="desc-title" id="double-card">
+                    <div class="container__card">
+                        <h2 class="container__card-title">
                             Интерактив и нетворкинг
                         </h2>
-                        <ul class="info-list">
+                        <ul>
                             <li>
                                 Вы сможете задавать вопросы преподавателям во
                                 время лекции в Зуме или в общем чате
                             </li>
-                            <li id="last-list-item">
+                            <li>
                                 Обсуждать материалы и домашки вместе с
                                 сокурсниками. Это поможет найти новый
                                 профессиональный круг общения
@@ -133,42 +135,42 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="double-carted">
             <div class="container">
-                <h1 class="info-title">Бесплатное обучение</h1>
-                <div class="cards-container">
-                    <div class="card">
+                <h1 class="container__title">Бесплатное обучение</h1>
+                <div class="container__cards">
+                    <div class="container__card">
                         <img
                             class="demo-img"
                             src="media/cap-academic.png"
                             alt=""
                         />
-                        <h2 class="desc-title" id="double-card">
+                        <h2 class="container__card-title">
                             Каждый студент проходит тщательный отбор
                         </h2>
 
-                        <ul class="info-list">
+                        <ul>
                             <li>
                                 Пройдите экзамен и заполните анкету, которая
                                 выполняет функцию портфолио
                             </li>
-                            <li id="last-list-item">
+                            <li>
                                 Расскажите подробно о своем опыте: сильное
                                 портфолио влияет на решение
                             </li>
                         </ul>
                     </div>
-                    <div class="card">
+                    <div class="container__card">
                         <img class="demo-img" src="media/icon.png" alt="" />
-                        <h2 class="desc-title" id="double-card">
+                        <h2 class="container__card-title">
                             Одинаковые условия для всех
                         </h2>
-                        <ul class="info-list">
+                        <ul>
                             <li>
                                 Чтобы успешно закончить курс, нужно выполнить
                                 обязательные домашние задания и защитить проект
                             </li>
-                            <li id="last-list-item">
+                            <li>
                                 После обучения выдаем сертификат,
                                 подтверждающий, что вы освоили теорию и навыки
                                 веб-разработки
@@ -178,35 +180,35 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="multi-carted">
             <div class="container">
-                <h1 class="info-title">Как попасть на курс</h1>
-                <div class="mini-cards-container">
-                    <div class="mini-card">1</div>
-                    <div class="mini-card">2</div>
-                    <div class="mini-card">3</div>
-                    <div class="mini-card">4</div>
+                <h1 class="container__title">Как попасть на курс</h1>
+                <div class="container__cards-iterators">
+                    <div class="container__iter">1</div>
+                    <div class="container__iter">2</div>
+                    <div class="container__iter">3</div>
+                    <div class="container__iter">4</div>
                 </div>
-                <div class="cards-container">
-                    <div class="card">
-                        <p class="card-desc-center">
+                <div class="container__cards">
+                    <div class="container__card">
+                        <p class="container__card-desc">
                             Оставьте заявку онлайн и зарегистрируйтесь на сайте
                         </p>
                     </div>
-                    <div class="card">
-                        <p class="card-desc-center">
+                    <div class="container__card">
+                        <p class="container__card-desc">
                             Расскажите в анкете, почему хотите изучить
                             веб-разработку
                         </p>
                     </div>
-                    <div class="card">
-                        <p class="card-desc-center">
+                    <div class="container__card">
+                        <p class="container__card-desc">
                             Пройдите экзамен: решите несколько задач по
                             программированию
                         </p>
                     </div>
-                    <div class="card">
-                        <p class="card-desc-center">
+                    <div class="container__card">
+                        <p class="container__card-desc">
                             Дождитесь письма об итогах отбора. Начните учиться
                         </p>
                     </div>
@@ -218,7 +220,7 @@
                 <p>© 2022 «Тинькофф Образование»</p>
                 <p>
                     По вопросам пишите на
-                    <a href="" class="email">edu@tinkoff.ru</a>
+                    <a href="" class="container__email">edu@tinkoff.ru</a>
                 </p>
             </div>
         </footer>
