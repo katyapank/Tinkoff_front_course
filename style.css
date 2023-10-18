@@ -51,15 +51,21 @@ p {
     font-weight: 900;
     font-size: 44px;
     margin: 0px 0 24px 0;
+    line-height: 48px;
 }
 .desc-title {
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 16px;
+    line-height: 28px;
+}
+#double-card {
+    margin-bottom: 12px;
 }
 .desc {
     font-size: 15px;
     margin-bottom: 40px;
+    line-height: 24px;
 }
 .card-desc {
     font-size: 15px;
@@ -156,7 +162,8 @@ section {
     margin-bottom: 24px;
 }
 .first-section {
-    margin-bottom: 55px;
+    padding: 80px 0 0 0;
+    margin-bottom: 56px;
 }
 .btn {
     display: flex;
@@ -201,6 +208,9 @@ section {
     line-height: 24px;
     position: relative;
     list-style-type: none;
+}
+#last-list-item {
+    margin: 0;
 }
 .info-list li::before {
     content: "";
@@ -254,13 +264,15 @@ section {
     font-size: 24px;
     font-weight: 800;
 }
+
+/*Стили футера*/
 footer .container {
     position: relative;
     display: flex;
     justify-content: space-between;
     color: var(--black-color-mega-light);
     width: 100%;
-    margin-top: 108px;
+    margin-top: 172px;
     margin-bottom: 24px;
 }
 footer .container::before {
