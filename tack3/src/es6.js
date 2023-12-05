@@ -47,32 +47,34 @@ class Dictionary {
         this.map = new Map();
     }
     get(def) {
-        if (typeof def === 'string') return this.map.get(def);
+        if (typeof def === 'string' && this.map.has(def))
+            return this.map.get(def);
         else return false;
     }
     set(def, desc) {
-        if (typeof def === 'string' && typeof desc === 'string')
+        if (typeof def === 'string' && typeof desc === 'string') {
             this.map.set(def, desc);
-        else return false;
+        } else return false;
+    }
+    showSelectedWord(def) {
+        if (typeof def === 'string') {
+            if (this.map.has(def)) console.log(def + ' ' + this.get(def));
+            else return false;
+        } else return false; //неверный тип
     }
     remove(def) {
-        if (typeof def === 'string')
+        if (typeof def === 'string') {
             if (this.map.has(def)) {
                 this.map.delete(def);
                 return true;
-            } else return false;
-        // Такого слова нет в словаре
-        else return false; // Неверный тип данных
+            } else return false; //нет в словаре
+        } else return false; //неверный тип
     }
-    showSelectedWord(def) {
-        if (typeof def === 'string')
-            if (this.map.has(def)) console.log(def + ' ' + this.get(def));
-            else return false;
-        // Нет такого слова
-        else return false; // Неверный тип данных
-    }
+
     showAllWords() {
-        for (let key of this.map.keys()) console.log(key + ' ' + this.get(key));
+        for (let key of this.map.keys()) {
+            console.log(key + ' ' + this.get(key));
+        }
     }
 }
 
