@@ -4,7 +4,10 @@ const core = require('./es6');
 describe('es6', () => {
     describe('#fioToName', () => {
         it('ФИО в Имя Фамилия корректно', () => {
-            assert.strictEqual(core.fioToName('Иванов Иван Иванович'), 'Иван Иванов');
+            assert.strictEqual(
+                core.fioToName('Иванов Иван Иванович'),
+                'Иван Иванов'
+            );
         });
 
         it('ФИ в Имя Фамилия', () => {
@@ -39,9 +42,21 @@ describe('es6', () => {
     describe('#Dictionary', () => {
         it('экземпляр класса создается', () => {
             const dic = new core.Dictionary();
-
-            // TODO
             assert.strictEqual(!!dic, true);
+        });
+        it('работают get и set', () => {
+            const dic = new core.Dictionary();
+            dic.set('apple', 'a fruit');
+            assert.strictEqual(dic.get('apple'), 'a fruit');
+            assert.strictEqual(dic.get('banana'), false);
+            assert.strictEqual(dic.set(123, 'number'), false);
+            assert.strictEqual(dic.set('apple', 456), false);
+        });
+        it('работает remove', () => {
+            const dic = new core.Dictionary();
+            dic.set('banana', 'another fruit');
+            assert.strictEqual(dic.remove('banana'), true);
+            assert.strictEqual(dic.remove('cherry'), false);
         });
     });
 });
