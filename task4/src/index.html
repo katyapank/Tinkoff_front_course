@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/dist/output.css" rel="stylesheet" />
+    </head>
+    <body
+        class="min-h-screen bg-[url('../public/wave.svg')] bg-no-repeat bg-bottom bg-fixed"
+    >
+        <div class="flex flex-row h-100">
+            <div
+                class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+                <form class="space-y-6" id="add_form" action="#">
+                    <h5
+                        class="text-xl font-medium text-gray-900 dark:text-white"
+                    >
+                        Добавление товара
+                    </h5>
+                    <div>
+                        <label
+                            for="prodName"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Название товара (до 20 символов)</label
+                        >
+                        <input
+                            type="text"
+                            name="prodName"
+                            id="prodName"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            placeholder="Кастрюля"
+                            minlength="2"
+                            maxlength="20"
+                        />
+                    </div>
+                    <div>
+                        <label
+                            for="imgPath"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Ссылка на изображение</label
+                        >
+                        <input
+                            type="url"
+                            name="imgPath"
+                            id="imgPath"
+                            placeholder="https://the_best_img.jpg"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        />
+                    </div>
+                    <div class="max-w-sm mx-auto">
+                        <label
+                            for="description"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Описание товара (до 50 символов)</label
+                        >
+                        <textarea
+                            id="description"
+                            name="description"
+                            maxlength="50"
+                            rows="4"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Это лучшая кастрюля на всём белом свете!"
+                        ></textarea>
+                    </div>
+                    <div>
+                        <label
+                            for="prodNum"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Код товара</label
+                        >
+                        <input
+                            type="text"
+                            name="prodNum"
+                            id="prodNum"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            placeholder="12345"
+                        />
+                    </div>
+                    <div>
+                        <label
+                            for="prodOwner"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Поставщик</label
+                        >
+                        <input
+                            type="text"
+                            name="prodOwner"
+                            id="prodOwner"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            placeholder="ООО Мир кастрюлей"
+                        />
+                    </div>
+
+                    <button
+                        class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        id="add_button"
+                    >
+                        Добавить
+                    </button>
+                </form>
+            </div>
+            <div id="cards" class="cards_place"></div>
+            <script src="script.js"></script>
+        </div>
+    </body>
+</html>
