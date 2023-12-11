@@ -1,5 +1,6 @@
 # Как запустить
 > npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
 Далее переходим в директорию src к файлу index.html и запускаем его через Live Server
 
 В данной работе выполнено:
