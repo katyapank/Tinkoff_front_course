@@ -1,0 +1,197 @@
+body {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    font-family: "Roboto", sans-serif;
+}
+
+#app.open {
+    display: block;
+}
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+.container {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.container__form {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.container__form input[type="text"],
+.container__form input[type="url"],
+.container__form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    box-sizing: border-box;
+}
+
+.container__form textarea {
+    resize: none;
+}
+
+.container__form input[type="text"]:focus,
+.container__form input[type="url"]:focus,
+.container__form textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.container__form .btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.container__form .cancel {
+    background-color: red;
+}
+
+.container__form .btn:hover,
+.card-btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 225px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.card__top {
+    flex: 0 0 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #555;
+    opacity: 0.8;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+
+.card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    padding: 10px;
+    justify-content: end;
+}
+
+.card__title {
+    display: block;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #414141;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+.card__title:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #ff6633;
+    width: 100%;
+    margin: 0 auto 10px;
+    height: 2px;
+    opacity: 0.8;
+}
+
+.card__title:hover {
+    color: #ff6633;
+}
+
+.card__description {
+    font-weight: 400;
+    font-size: 15px;
+    color: #737780;
+    line-height: 15px;
+    margin-bottom: 5px;
+}
+
+.card__seller {
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+    line-height: 13px;
+}
+
+.card__btns {
+    margin: 0 10px 10px;
+}
+
+.card-btn {
+    background-color: #555;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 2px;
+    opacity: 0.8;
+}
+
+.delete {
+    background-color: red;
+}
