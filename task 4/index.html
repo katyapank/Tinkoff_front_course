@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Тинькофф Образование</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <h1>Рабы прикладной математики</h1>
+        <button class="open-button" id="create">Добавить раба</button>
+        <div class="container" id="app">
+            <form class="container__form" id="card-form">
+                <label for="name">Название</label>
+                <input type="text" id="name" required />
+                <label for="description">Описание</label>
+                <textarea id="description" required></textarea>
+                <label for="image-url">Ссылка на изображение</label>
+                <input type="url" id="image-url" required />
+                <label for="product-code">Код товара</label>
+                <input type="text" id="product-code" required />
+                <label for="supplier">Поставщик</label>
+                <input type="text" id="supplier" required />
+                <button type="submit" class="btn">Сохранить</button>
+                <button type="button" class="btn cancel" id="close">
+                    Закрыть
+                </button>
+            </form>
+        </div>
+        <div id="card-list" class="card-list"></div>
+        <script>
+            const create = document.querySelector("#create");
+            const form = document.querySelector("#app");
+            const close_form = document.querySelector("#close");
+            const cardForm = document.getElementById("card-form");
+            const cardList = document.getElementById("card-list");
+
+            create.addEventListener("click", () => {
+                form.classList.add("open");
+            });
+
+            close_form.addEventListener("click", () => {
+                form.classList.remove("open");
+            });
+
+            // Функция для создания и добавления карточки в список
+            function addCard(card) {
+                const cardElement = document.createElement("div");
+                cardElement.classList.add("card");
+                cardElement.innerHTML = `
+                            <div class="card__top">
+                                <img src="${card.imageUrl}" alt="${card.name}">
+                                <div class="card__label">${card.productCode}</div>
+                            </div>
+                            <div class="card__bottom">
+                                <a href="#" class="card__title">${card.name}</a>
+                                <div class="card__description">${card.description}</div>
+                                <div class="card__seller">Поставщик: ${card.supplier}</div>
+                            </div>
+                            <div class="card__btns">
+                                    <button class="card-btn" onclick="editCard(${card.id})">Редактировать</button>
+                                    <button class="card-btn delete" onclick="deleteCard(${card.id})">Удалить</button>
+                            </div>
+                          `;
+
+                cardList.appendChild(cardElement);
+            }
+
+            // Функция для обновления списка карточек
+            function updateCardList() {
+                cardList.innerHTML = "";
+
+                const initialCards = [
+                    {
+                        id: 1,
+                        name: "Панкратова Екатерина",
+                        description:
+                            "Трудолюбивая студентка ПМИ, катается на роликах, сочиняет песни",
+                        imageUrl:
+                            "https://sun7-20.userapi.com/impg/ceMmKc2e2smwi7ddCFxJUfNop3V5gUj-9zvX5w/Zbk6RVcpPfE.jpg?size=1620x2160&quality=95&sign=fba1fca3602f4234887cd3edc6494e85&type=album",
+                        productCode: "1",
+                        supplier: "ООО Панкратовы",
+                    },
+                    {
+                        id: 2,
+                        name: "Головань Анна",
+                        description:
+                            "Старательная студентка, бизнес леди, судья в военном суде",
+                        imageUrl:
+                            "https://sun9-21.userapi.com/impg/ByqrNYNu-G22trk1L56TeWM0RpZ8wu5I05fUpA/5UAUKJeDZfc.jpg?size=960x1280&quality=95&sign=3911f4eba093664fb6a6c75e373a9051&type=album",
+                        productCode: "2",
+                        supplier: "ООО Головань",
+                    },
+                    {
+                        id: 3,
+                        name: "Смекалина Анастасия",
+                        description:
+                            "Умная девушка, работает в IT сфере, деловая, художница",
+                        imageUrl:
+                            "https://sun9-50.userapi.com/impf/c855536/v855536574/14217/5P_z3OtRPqU.jpg?size=1728x2160&quality=96&sign=15b3a048964b7297bdc31f4e0c093d9e&type=album",
+                        productCode: "3",
+                        supplier: "ООО Смекалины",
+                    },
+                    {
+                        id: 4,
+                        name: "Саламатина Полина",
+                        description:
+                            "Младший преподаватель ПМИ, обучает своих подруг азам ТЦОС и ОИ",
+                        imageUrl:
+                            "https://sun9-77.userapi.com/impg/VC-arD_Qe-Ut6DgY9Xm3kbtHWSL3YdhLxDIH8w/pPdcN9JMYsA.jpg?size=1620x2160&quality=95&sign=a6e8ecb3f0ddff34d01451bc95bddbbe&type=album",
+                        productCode: "4",
+                        supplier: "ООО Саламатины",
+                    },
+                    {
+                        id: 5,
+                        name: "Ильин Глеб",
+                        description:
+                            "Засланный казачок, экономист, особо опасен в периоды зачётных недель",
+                        imageUrl:
+                            "https://sun9-48.userapi.com/impg/p06Z7uNlpXN-arTGu1VGFUPJ0m5nS80TyoDgWg/aoKt0xARdXg.jpg?size=1620x2160&quality=95&sign=d481d6ba1c61d93963ee006a5815411d&type=album",
+                        productCode: "5",
+                        supplier: "ООО Ильины",
+                    },
+                ];
+
+                const cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+                if (cards.length === 0) {
+                    cards.push(...initialCards);
+                    localStorage.setItem("cards", JSON.stringify(cards));
+                }
+
+                cards.forEach(addCard);
+            }
+
+            // Функция для сохранения новой карточки
+            function saveCard(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const description =
+                    document.getElementById("description").value;
+                const imageUrl = document.getElementById("image-url").value;
+                const productCode =
+                    document.getElementById("product-code").value;
+                const supplier = document.getElementById("supplier").value;
+
+                const cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+                const newCard = {
+                    id: new Date().getTime(),
+                    name,
+                    description,
+                    imageUrl,
+                    productCode,
+                    supplier,
+                };
+
+                cards.push(newCard);
+                localStorage.setItem("cards", JSON.stringify(cards));
+
+                addCard(newCard);
+                cardForm.reset();
+            }
+
+            // Функция для удаления карточки
+            function deleteCard(id) {
+                const cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+                const filteredCards = cards.filter((card) => card.id !== id);
+
+                localStorage.setItem("cards", JSON.stringify(filteredCards));
+
+                updateCardList();
+            }
+
+            // Функция для редактирования карточки
+            function editCard(id) {
+                const cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+                const cardToEdit = cards.find((card) => card.id === id);
+
+                form.classList.add("open");
+
+                if (cardToEdit) {
+                    document.getElementById("name").value = cardToEdit.name;
+                    document.getElementById("description").value =
+                        cardToEdit.description;
+                    document.getElementById("image-url").value =
+                        cardToEdit.imageUrl;
+                    document.getElementById("product-code").value =
+                        cardToEdit.productCode;
+                    document.getElementById("supplier").value =
+                        cardToEdit.supplier;
+
+                    deleteCard(id);
+                }
+            }
+
+            // Обработчик события отправки формы
+            cardForm.addEventListener("submit", saveCard);
+
+            // Загрузка карточек при загрузке страницы
+            updateCardList();
+        </script>
+    </body>
+</html>
