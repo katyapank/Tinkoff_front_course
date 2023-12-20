@@ -51,7 +51,7 @@ body {
     cursor: pointer;
 }
 
-.logo {
+.header__main-logo {
     margin-right: 24px;
     cursor: pointer;
     width: 151px;
