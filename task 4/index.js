@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             form.name.value = product.name;
             form.description.value = product.description;
             form.imageUrl.value = product.imageUrl;
-            form.productcode.value = product.id;
+            form.productCode.value = product.id;
             form.supplier.value = product.supplier;
             form.dataset.editIndex = index;
         }
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const productData = {
-            id: Number(form.productcode.value),
+            id: Number(form.productCode.value),
             name: form.name.value,
             description: form.description.value,
             imageUrl: form.imageUrl.value,
