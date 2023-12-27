@@ -6,21 +6,27 @@
 
 Для удобства проверки база уже заполнена некоторыми рабами прикладной математики (см. рисунок 1)
 
-![image](https://github.com/katyapank/Tinkoff_front_course/assets/71553892/70097d96-c610-4f92-a6bb-83536e0a1a30)    
+![image](https://github.com/katyapank/Tinkoff_front_course/assets/71553892/4b0229a0-65fc-4a45-9178-3363cdae019f)     
   
 
 На странице представлена удобная форма создания (редактирования) рабов (см. рисунок 2)
 
-![image](https://github.com/katyapank/Tinkoff_front_course/assets/71553892/51ebb4ad-361b-4046-9aca-185a682ad1b7)    
+![image](https://github.com/katyapank/Tinkoff_front_course/assets/71553892/732828ef-02fa-490e-ad43-6ae310def31f)    
   
 
-При нажатии на кнопку "редактировать" карточка пропадает из списка, а в форму автоматически заносятся её данные для удобного редактирования (см. рисунок 3)
+При нажатии на кнопку "редактировать" в форму автоматически заносятся данные карточки для удобного редактирования (см. рисунок 3)
 
-![image](https://github.com/katyapank/Tinkoff_front_course/assets/71553892/1e98ddb6-a146-434e-bcb7-9838d27ca0df)    
+![image](https://github.com/katyapank/Tinkoff_front_course/assets/71553892/451dc828-8a66-43a5-8038-5b371c43abd5)    
   
 
 Данный ресурс предоставляет поистине *безграничные* возможности для управления! Стильный дизайн позволяет получить настоящее *удовольствие* от управления живыми людьми. Попробуйте и Вы!
 
-Чтобы получить возможность управлять карточками рабов прикладной математики необходимо всего лишь открыть файл index.html с помощью LiveServer.  
+## Чтобы получить возможность управлять карточками рабов прикладной математики необходимо:  
+  
+1. Прописать в терминале следующие команды:  
+*npm install -g json-server*  
+*json-server --watch db.json*  
+  
+2. Открыть файл index.html с помощью LiveServer.  
 
 ![image](https://github.com/katyapank/Tinkoff_front_course/assets/71553892/3d403741-ceda-4558-8d63-20e4a7e5a697)
