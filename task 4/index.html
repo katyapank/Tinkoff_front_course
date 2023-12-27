@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Тинькофф Образование</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <h1>Рабы прикладной математики</h1>
+        <h2 id="creatorInfo"></h2>
+        <button class="open-button" id="create">Добавить раба</button>
+        <div class="container" id="app">
+            <form class="container__form" id="card-form">
+                <label for="name">Название</label>
+                <input type="text" id="name" required />
+                <label for="description">Описание</label>
+                <textarea id="description" required></textarea>
+                <label for="imageUrl">Ссылка на изображение</label>
+                <input type="url" id="imageUrl" required />
+                <label for="productCode">Код товара</label>
+                <input type="number" id="productCode" required />
+                <label for="supplier">Поставщик</label>
+                <input type="text" id="supplier" required />
+                <button type="submit" class="btn">Сохранить</button>
+                <button type="button" class="btn cancel" id="close">
+                    Закрыть
+                </button>
+            </form>
+        </div>
+        <div id="card-list" class="card-list"></div>
+        <div class="loader invisible"></div>
+        <script src="index.js"></script>
+    </body>
+</html>
